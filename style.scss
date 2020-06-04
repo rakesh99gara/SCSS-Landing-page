@@ -1,0 +1,285 @@
+$light-background-color1: #ffffff;
+$light-background-color2: #e0e0e0;
+$black-font-color1: grey;
+$black-font-color2: #000000;
+$dark-background-color1: #202124;
+$dark-background-color2: #3c4042;
+$white-font-color1: #ffffff;
+$white-font-color2: #8e98a1;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  font-family: "Playfair Display" !important;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.left,
+.right {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+}
+
+.left {
+  background: $light-background-color1;
+}
+
+.right {
+  left: 50%;
+  background: $light-background-color2;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100px;
+}
+
+.logo,
+.next {
+  line-height: 80px;
+  position: absolute;
+  padding: 10px;
+}
+
+.watch,
+.cart {
+  line-height: 80px;
+  position: absolute;
+  padding: 10px;
+  right: 0;
+}
+
+.logo {
+  padding: 10px 80px 10px 60px;
+  background: $light-background-color2;
+}
+
+.next {
+  left: 280px;
+}
+
+.watch {
+  right: 450px;
+  font-family: helvetica;
+  color: $black-font-color1;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+.cart {
+  right: 300px;
+}
+
+.right-sidebar {
+  right: 80px;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  text-align: right;
+}
+
+.right-sidebar ul {
+  list-style: none;
+}
+
+.title {
+  font-size: 36px;
+  font-family: "Playfail Display";
+  padding-bottom: 40px;
+}
+
+.right-sidebar li:not(:first-child) {
+  padding: 6px 0;
+}
+
+.product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fly 4s ease-in-out infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-50%, -46%);
+  }
+
+  50% {
+    transform: translate(-50%, -54%);
+  }
+
+  100% {
+    transform: translate(-50%, -46%);
+  }
+}
+
+.left-bottom {
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+  font-family: helvetica;
+  letter-spacing: 3px;
+  color: $black-font-color1;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.left-sidebar {
+  left: 60px;
+  position: absolute;
+  top: 46%;
+  transform: translateY(-50%);
+  text-align: left;
+  width: 26%;
+  button {
+    padding: 24px 48px;
+    background: $dark-background-color1;
+    color: $white-font-color1;
+    outline: none;
+    border: none;
+    margin: 1em 0;
+    font-family: helvetica;
+    font-weight: bolder;
+    letter-spacing: 4px;
+  }
+  p {
+    font-family: helvetica;
+    font-weight: lighter;
+    line-height: 24px;
+    color: $black-font-color1;
+  }
+}
+
+.left-sidebar #price {
+  color: $black-font-color2;
+}
+
+.media {
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
+  ul {
+    list-style: none;
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+.media ul li:not(:last-child) {
+  padding-right: 40px;
+}
+
+.theme {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  text-align: center;
+  ul {
+    //   z-index: 1;
+    cursor: pointer;
+    overflow: hidden;
+    height: 30px;
+    //   width: auto;
+    li {
+      list-style-type: none;
+      width: 100%;
+      height: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      transition: 0.5s;
+      span {
+        display: block;
+        width: 100%;
+        font-family: helvetica;
+        padding: 5px;
+        border: 1px solid $black-font-color2;
+      }
+    }
+  }
+}
+
+.theme ul.active li {
+  transform: translateY(-30px);
+}
+
+.theme ul li .theme ul.active li span {
+  border: 1px solid $white-font-color1;
+  color: $white-font-color1;
+}
+
+.theme ul li span:nth-child(1) {
+  background: $dark-background-color1;
+  color: $white-font-color1;
+}
+
+.container {
+  div.left-active {
+    background: $dark-background-color1;
+  }
+  div.right-active {
+    background: $dark-background-color2;
+  }
+  div.right-sidebar-active ul {
+    color: $white-font-color1;
+  }
+  div.left-bottom-active p {
+    color: $white-font-color2;
+  }
+  div.left-sidebar-active {
+    .product-title {
+      color: $white-font-color1;
+    }
+    .desc {
+      color: $white-font-color2;
+    }
+    #price {
+      color: $white-font-color1;
+    }
+    .btn {
+      background: $light-background-color1;
+      color: $black-font-color2;
+    }
+  }
+
+  div.media-active ul li {
+    color: $white-font-color1;
+  }
+}
+
+.nav {
+  div.logo-active {
+    background: $dark-background-color2;
+    color: $white-font-color1;
+  }
+  div.next-active {
+    color: $white-font-color1;
+  }
+  div.watch-active {
+    i {
+      color: $white-font-color2;
+    }
+    span {
+      color: $white-font-color2;
+    }
+  }
+  div.cart-active i {
+    color: $white-font-color2;
+  }
+}
